@@ -28,6 +28,13 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
       <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          src="https://i.pinimg.com/564x/42/03/2d/42032d0e52fed8b6a1293c74f35bfc0f.jpg"
+          alt="Minion angel with wings and halo"
+          width={540}
+          height={405}
+          className="w-64 h-auto self-center rounded-lg"
+        />
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
             One in a <span className="text-minion-yellow">Minion</span>
