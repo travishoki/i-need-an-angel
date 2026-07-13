@@ -10,6 +10,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Minions & Monsters poster palette */
+  --color-minion-yellow: #fed537;
+  --color-amber-glow: #feb312;
+  --color-monster-orange: #fb6806;
+  --color-fire-red: #d92502;
+  --color-deep-crimson: #9f0507;
+  --color-terracotta: #de8a57;
+  --color-sky-cyan: #1fadd0;
+  --color-ocean-teal: #22819e;
+  --color-slate-teal: #37636f;
+  --color-blush-cream: #fce2ce;
+  --color-warm-sand: #e6af83;
+  --color-ink-brown: #2a2221;
 }
 
 @media (prefers-color-scheme: dark) {
