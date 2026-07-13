@@ -33,7 +33,7 @@ export default function Home() {
           alt="Minion angel with wings and halo"
           width={540}
           height={405}
-          className="w-64 h-auto self-center rounded-lg"
+          className="w-[32rem] h-auto self-center rounded-lg"
         />
         <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
@@ -43,7 +43,7 @@ export default function Home() {
             Good Code. Better Karma. Banana.
           </p>
         </div>
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="flex flex-row flex-wrap items-start gap-4 w-full">
           {posters.map((poster) => (
             <a
               key={poster.src}
@@ -56,7 +56,7 @@ export default function Home() {
                 alt={poster.alt}
                 width={poster.width}
                 height={poster.height}
-                className="w-full h-64 object-cover rounded-lg"
+                className="h-64 w-auto rounded-lg"
               />
             </a>
           ))}
