@@ -18,14 +18,24 @@ export default function About() {
             and Minions franchise. Browse the slider, pick a poster, and read
             up on the film (or the minion) it belongs to.
           </p>
-          <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Built with Next.js and Tailwind CSS, with a color palette pulled
-            straight from the movies&apos; own artwork.
-          </p>
-          <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            The winged, halo-topped minion in the header is a nod to Angel
-            Studios / Vid Angel&apos;s halo-and-wings branding.
-          </p>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
+              Tech Stack
+            </h2>
+            <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+              Built with Next.js and Tailwind CSS, with a color palette pulled
+              straight from the movies&apos; own artwork.
+            </p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
+              Design Inspiration
+            </h2>
+            <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+              The winged, halo-topped minion in the header is a nod to Angel
+              Studios / Vid Angel&apos;s halo-and-wings branding.
+            </p>
+          </div>
         </main>
       </div>
     </div>
