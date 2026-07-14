@@ -9,6 +9,7 @@ const eslintConfig = defineConfig([
   {
     rules: {
       'comma-dangle': ['error', 'always-multiline'],
+      indent: [2, 'tab', { SwitchCase: 1 }],
       quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
       'react/jsx-sort-props': [
         'error',
