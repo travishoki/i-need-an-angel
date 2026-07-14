@@ -1,8 +1,8 @@
 export type Poster = {
+  description: string;
+  height: number;
+  link: string;
   src: string;
   title: string;
-  link: string;
-  description: string;
   width: number;
-  height: number;
 };
