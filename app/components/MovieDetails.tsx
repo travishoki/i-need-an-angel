@@ -6,7 +6,7 @@ export default function MovieDetails({ movie }: { movie: Poster }) {
       <h2 className="text-xl font-semibold text-black dark:text-zinc-50">
         {movie.title}
       </h2>
-      <p className="max-w-md text-base leading-7 text-zinc-600 dark:text-zinc-400">
+      <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
         {movie.bio}
       </p>
       <a

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import PosterGrid from "./components/PosterGrid";
+import PosterSlider from "./components/PosterSlider";
 import MovieDetails from "./components/MovieDetails";
 
 const posters = [
@@ -70,7 +70,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           src="https://i.pinimg.com/564x/42/03/2d/42032d0e52fed8b6a1293c74f35bfc0f.jpg"
           alt="Minion angel with wings and halo"
@@ -86,7 +86,7 @@ export default function Home() {
             Good Code. Better Karma. Banana.
           </p>
         </div>
-        <PosterGrid posters={posters} selected={selected} onSelect={setSelected} />
+        <PosterSlider posters={posters} selected={selected} onSelect={setSelected} />
         <MovieDetails movie={selected} />
       </main>
     </div>
