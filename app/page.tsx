@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import PosterGrid from "./components/PosterGrid";
+import MovieDetails from "./components/MovieDetails";
 
 const posters = [
   {
@@ -51,48 +53,8 @@ export default function Home() {
             Good Code. Better Karma. Banana.
           </p>
         </div>
-        <div className="flex flex-row flex-wrap items-start gap-4 w-full">
-          {posters.map((poster) => (
-            <button
-              key={poster.src}
-              onClick={() => setSelected(poster)}
-              className="flex flex-col items-center gap-2 cursor-pointer"
-            >
-              <Image
-                src={poster.src}
-                alt={poster.title}
-                width={poster.width}
-                height={poster.height}
-                className="h-64 w-auto rounded-lg"
-              />
-              <span
-                className={`text-sm font-medium transition-colors ${
-                  selected.src === poster.src
-                    ? "text-minion-yellow"
-                    : "text-zinc-600 hover:text-minion-yellow dark:text-zinc-400"
-                }`}
-              >
-                {poster.title}
-              </span>
-            </button>
-          ))}
-        </div>
-        <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-          <h2 className="text-xl font-semibold text-black dark:text-zinc-50">
-            {selected.title}
-          </h2>
-          <p className="max-w-md text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            {selected.bio}
-          </p>
-          <a
-            href={selected.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-2 rounded-full bg-minion-yellow px-5 py-2.5 text-sm font-semibold text-ink-brown transition-transform hover:scale-105"
-          >
-            View on wiki
-          </a>
-        </div>
+        <PosterGrid posters={posters} selected={selected} onSelect={setSelected} />
+        <MovieDetails movie={selected} />
       </main>
     </div>
   );
