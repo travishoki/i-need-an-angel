@@ -25,7 +25,11 @@ export default function Navigation() {
     <>
       <nav className="hidden items-center gap-6 sm:flex">
         {navLinks.map((link) => (
-          <Link key={link.href} className={linkClass(link.href)} href={link.href}>
+          <Link
+            key={link.href}
+            className={linkClass(link.href)}
+            href={link.href}
+          >
             {link.label}
           </Link>
         ))}

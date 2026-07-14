@@ -14,9 +14,9 @@ export default function About() {
             <span className="text-minion-yellow">Minion</span>
           </h1>
           <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            One in a Minion is a small poster gallery for the Despicable Me
-            and Minions franchise. Browse the slider, pick a poster, and read
-            up on the film (or the minion) it belongs to.
+            One in a Minion is a small poster gallery for the Despicable Me and
+            Minions franchise. Browse the slider, pick a poster, and read up on
+            the film (or the minion) it belongs to.
           </p>
           <div className="flex flex-col gap-1">
             <h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
