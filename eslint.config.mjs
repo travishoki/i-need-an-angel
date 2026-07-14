@@ -6,6 +6,9 @@ import prettierConfig from 'eslint-config-prettier';
 const eslintConfig = defineConfig([
 	...nextVitals,
 	...nextTs,
+	// Turns off ESLint formatting rules that would otherwise fight Prettier
+	// on save. Must stay before the rules block below so our choices win.
+	prettierConfig,
 	{
 		rules: {
 			'comma-dangle': ['error', 'always-multiline'],
@@ -16,16 +19,6 @@ const eslintConfig = defineConfig([
 				{ ignoreCase: true, reservedFirst: ['key'] },
 			],
 			'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
-		},
-	},
-	// Turns off ESLint formatting rules that would otherwise fight Prettier
-	// on save. Must stay last so it can override the configs above.
-	prettierConfig,
-	// Re-enable rules after prettierConfig turns them off, so they actually run.
-	{
-		rules: {
-			indent: [2, 'tab', { SwitchCase: 1 }],
-			quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
 		},
 	},
 	// Override default ignores of eslint-config-next.
