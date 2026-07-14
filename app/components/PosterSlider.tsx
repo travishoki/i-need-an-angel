@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Poster } from "./types";
 import PosterItem from "./PosterItem";
+import SliderArrow from "./SliderArrow";
 
 export default function PosterSlider({
   posters,
@@ -42,26 +43,11 @@ export default function PosterSlider({
 
   return (
     <div className="group/slider relative w-full">
-      <button
-        onClick={() => scrollByAmount(-320)}
+      <SliderArrow
+        direction="left"
         disabled={!canScrollLeft}
-        aria-label="Scroll left"
-        className={`absolute left-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-ink-brown/80 p-2 text-blush-cream opacity-0 transition-opacity group-hover/slider:opacity-100 sm:flex ${
-          canScrollLeft
-            ? "cursor-pointer"
-            : "cursor-not-allowed group-hover/slider:opacity-60"
-        }`}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M15 18l-6-6 6-6"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+        onClick={() => scrollByAmount(-320)}
+      />
 
       <div
         ref={scrollRef}
@@ -77,26 +63,11 @@ export default function PosterSlider({
         ))}
       </div>
 
-      <button
-        onClick={() => scrollByAmount(320)}
+      <SliderArrow
+        direction="right"
         disabled={!canScrollRight}
-        aria-label="Scroll right"
-        className={`absolute right-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-ink-brown/80 p-2 text-blush-cream opacity-0 transition-opacity group-hover/slider:opacity-100 sm:flex ${
-          canScrollRight
-            ? "cursor-pointer"
-            : "cursor-not-allowed group-hover/slider:opacity-60"
-        }`}
-      >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M9 18l6-6-6-6"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
+        onClick={() => scrollByAmount(320)}
+      />
     </div>
   );
 }
