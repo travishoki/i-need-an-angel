@@ -5,14 +5,16 @@ import type { Poster } from '../types';
 import PosterItem from './PosterItem';
 import SliderArrow from './SliderArrow';
 
+const SCROLL_AMOUNT = 320;
+
 export default function PosterSlider({
+	onSelect,
 	posters,
 	selected,
-	onSelect,
 }: {
+	onSelect: (poster: Poster) => void;
 	posters: Poster[];
 	selected: Poster;
-	onSelect: (poster: Poster) => void;
 }) {
 	const scrollRef = useRef<HTMLDivElement>(null);
 	const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -46,7 +48,7 @@ export default function PosterSlider({
 			<SliderArrow
 				direction="left"
 				disabled={!canScrollLeft}
-				onClick={() => scrollByAmount(-320)}
+				onClick={() => scrollByAmount(-SCROLL_AMOUNT)}
 			/>
 
 			<div
@@ -66,7 +68,7 @@ export default function PosterSlider({
 			<SliderArrow
 				direction="right"
 				disabled={!canScrollRight}
-				onClick={() => scrollByAmount(320)}
+				onClick={() => scrollByAmount(SCROLL_AMOUNT)}
 			/>
 		</div>
 	);

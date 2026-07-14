@@ -2,13 +2,13 @@ import Image from 'next/image';
 import type { Poster } from '../types';
 
 export default function PosterItem({
-	poster,
 	isSelected,
 	onSelect,
+	poster,
 }: {
-	poster: Poster;
 	isSelected: boolean;
 	onSelect: () => void;
+	poster: Poster;
 }) {
 	return (
 		<button
