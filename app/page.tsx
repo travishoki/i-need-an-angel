@@ -30,6 +30,39 @@ const posters = [
     width: 1293,
     height: 2048,
   },
+  {
+    src: "https://static.wikia.nocookie.net/despicableme/images/e/ee/Dru.jpg/revision/latest/scale-to-width-down/268?cb=20221019063058",
+    title: "Despicable Me 3",
+    link: "https://despicableme.fandom.com/wiki/Despicable_Me_3",
+    bio: "Despicable Me 3 (stylized as DESPICABLE M3) is a 2017 American 3D computer-animated science fiction action comedy drama adventure movie produced by Illumination Entertainment. It is the third installment in the Despicable Me film series and a sequel to Despicable Me 2 (2013). The movie was released on June 30th, 2017, by Universal Pictures.",
+    width: 536,
+    height: 838,
+  },
+  {
+    src: "https://static.wikia.nocookie.net/despicableme/images/a/a4/Despicable_Me_4_Minions_Got_Bite_Poster.jpg/revision/latest/scale-to-width-down/268",
+    title: "Despicable Me 4",
+    link: "https://despicableme.fandom.com/wiki/Despicable_Me_4",
+    bio: "Despicable Me 4 is an animated superhero action comedy film and the fourth installment in the Despicable Me film series, the sixth overall in the Despicable Me franchise, and the sequel to 2017's Despicable Me 3. The film was released on July 3, 2024. It was also the second-highest grossing animated film of 2024 (after Kung Fu Panda 4), as well as the 15th-highest grossing animated film of all-time (after The Peanuts Movie, Mr Peabody & Sherman, Shrek, Minions: The Rise of Gru, Trolls, etc.).",
+    width: 268,
+    height: 424,
+  },
+  {
+    src: "https://static.wikia.nocookie.net/despicableme/images/1/15/Minions_The_Rise_of_Gru_main_poster.jpg/revision/latest/scale-to-width-down/268",
+    title: "Minions: The Rise of Gru",
+    link: "https://despicableme.fandom.com/wiki/Minions:_The_Rise_of_Gru",
+    bio: "Minions: The Rise of Gru (also known as Minions 2: The Rise of Gru, or just Minions 2) is a sequel to the 2015 film Minions. The film was released on July 1, 2022.",
+    width: 268,
+    height: 335,
+  },
+  {
+
+    src: "https://static.wikia.nocookie.net/despicableme/images/8/82/Minions_%26_Monsters_Eyeballs_Poster.jpg/revision/latest/scale-to-width-down/268",
+    title: "Monsters & Minions",
+    bio: "Set in 1920s Hollywood, the story follows a different tribe of mischievous yellow henchmen (completely seperate from the tribe shown in the 2015 film that would go on to serve Gru) as they crash a film set, quickly become Hollywood sensations, throw lavish parties in mansions, and inspire fans to wear overalls and goggles. Their 15 minutes of fame are abruptly cut short when sound is introduced to film, as they are completely unable to follow a script in their native Minionese language. Destitute and hopeless, the Minions roam the streets of Hollywood looking for a purpose, and a new evil master to serve. Aiming to reinvent themselves, our heroes James, Ed, and Henry have a different plan and break away from their tribe. They have fallen in love with making movies and want to make an awesome monster movie of their own! With the help of a spellbook taken from an old boss (an evil sorcerer they used to work for), James, Ed, and Henry summon and befriend a cute Lovecraftian creature to help summon more monsters to play the villains in their movie, but their casting attempts ultimately unleash a chaotic, globe-threatening destroyer with too many eyes as well as a whole horde of monsters to bring dominance to the planet. With things going completely off the rails, James, Henry, Ed, and all their buddies must work together to save the world from the monster mayhem they had just caused, and to fully find their true purpose.",
+    width: 268,
+    height: 424,
+    link: "https://despicableme.fandom.com/wiki/Monsters_%26_Minions",
+  }
 ];
 
 export default function Home() {
