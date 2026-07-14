@@ -21,6 +21,7 @@ export default function MovieDetails({ movie }: { movie: Poster }) {
       <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
         {displayedDescription}
       </p>
+
       {isTruncated && (
         <button
           onClick={() => setExpanded((prev) => !prev)}
@@ -44,6 +45,7 @@ export default function MovieDetails({ movie }: { movie: Poster }) {
           </svg>
         </button>
       )}
+
       <a
         href={movie.link}
         target="_blank"
