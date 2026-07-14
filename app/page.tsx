@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Header from "./components/Header";
 import PosterSlider from "./components/PosterSlider";
 import MovieDetails from "./components/MovieDetails";
 import type { Poster } from "./components/types";
@@ -77,7 +76,6 @@ export default function Home() {
 
   return (
     <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-black">
-      <Header />
       <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
         <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
           <PosterSlider posters={posters} selected={selected} onSelect={setSelected} />
