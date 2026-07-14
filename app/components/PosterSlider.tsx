@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import type { Poster } from "./types";
+import PosterItem from "./PosterItem";
 
 export default function PosterSlider({
   posters,
@@ -68,32 +68,12 @@ export default function PosterSlider({
         className="no-scrollbar flex flex-row items-start gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory"
       >
         {posters.map((poster) => (
-          <button
+          <PosterItem
             key={poster.src}
-            onClick={() => onSelect(poster)}
-            className="flex flex-shrink-0 snap-start flex-col items-center gap-2 cursor-pointer"
-          >
-            <Image
-              src={poster.src}
-              alt={poster.title}
-              width={poster.width}
-              height={poster.height}
-              className={`h-64 w-auto rounded-lg border-4 transition-colors ${
-                selected.src === poster.src
-                  ? "border-minion-yellow"
-                  : "border-transparent"
-              }`}
-            />
-            <span
-              className={`text-sm font-medium transition-colors ${
-                selected.src === poster.src
-                  ? "text-minion-yellow"
-                  : "text-zinc-600 hover:text-minion-yellow dark:text-zinc-400"
-              }`}
-            >
-              {poster.title}
-            </span>
-          </button>
+            poster={poster}
+            isSelected={selected.src === poster.src}
+            onSelect={() => onSelect(poster)}
+          />
         ))}
       </div>
 
