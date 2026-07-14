@@ -25,11 +25,7 @@ const eslintConfig = defineConfig([
 	{
 		rules: {
 			indent: [2, 'tab', { SwitchCase: 1 }],
-			quotes: [
-				1,
-				'single',
-				{ allowTemplateLiterals: true, avoidEscape: true },
-			],
+			quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
 		},
 	},
 	// Override default ignores of eslint-config-next.

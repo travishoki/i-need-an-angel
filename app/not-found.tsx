@@ -18,18 +18,18 @@ export default function NotFound() {
 			/>
 			<div className="flex flex-col items-center gap-2">
 				<h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-          404: Lost in <span className="text-minion-yellow">Minion</span>-land
+					404: Lost in <span className="text-minion-yellow">Minion</span>-land
 				</h1>
 				<p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          This page wandered off looking for a new villain to serve. Let&apos;s
-          get you back home.
+					This page wandered off looking for a new villain to serve. Let&apos;s
+					get you back home.
 				</p>
 			</div>
 			<Link
 				className="mt-2 rounded-full bg-minion-yellow px-5 py-2.5 text-sm font-semibold text-ink-brown transition-transform hover:scale-105"
 				href="/"
 			>
-        Back to Home
+				Back to Home
 			</Link>
 		</div>
 	);

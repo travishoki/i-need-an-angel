@@ -14,36 +14,36 @@ export default function About() {
 						<span className="text-minion-yellow">Minion</span>
 					</h1>
 					<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            One in a Minion is a small poster gallery for the Despicable Me and
-            Minions franchise. Browse the slider, pick a poster, and read up on
-            the film (or the minion) it belongs to.
+						One in a Minion is a small poster gallery for the Despicable Me and
+						Minions franchise. Browse the slider, pick a poster, and read up on
+						the film (or the minion) it belongs to.
 					</p>
 					<div className="flex flex-col gap-1">
 						<h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
-              Design Inspiration
+							Design Inspiration
 						</h2>
 						<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              The winged, halo-topped minion in the header is a nod to Angel
-              Studios / Vid Angel&apos;s halo-and-wings branding. The color
-              palette throughout the site is pulled straight from the
-              movies&apos; own artwork.
+							The winged, halo-topped minion in the header is a nod to Angel
+							Studios / Vid Angel&apos;s halo-and-wings branding. The color
+							palette throughout the site is pulled straight from the
+							movies&apos; own artwork.
 						</p>
 					</div>
 					<div className="flex flex-col gap-1">
 						<h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
-              Tech Stack
+							Tech Stack
 						</h2>
 						<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              Built with Next.js and Tailwind CSS.
+							Built with Next.js and Tailwind CSS.
 						</p>
 					</div>
 					<div className="flex flex-col gap-1">
 						<h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
-              Housekeeping
+							Housekeeping
 						</h2>
 						<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              We also added a few ESLint rules along the way, mostly as an
-              exercise to get comfortable with where they go in the config.
+							We also added a few ESLint rules along the way, mostly as an
+							exercise to get comfortable with where they go in the config.
 						</p>
 					</div>
 				</main>

@@ -13,10 +13,10 @@ export default function Branding() {
 			/>
 			<div className="flex min-w-0 flex-col items-start text-left">
 				<h1 className="truncate text-base font-semibold leading-tight tracking-tight text-black sm:text-xl dark:text-zinc-50">
-          One in a <span className="text-minion-yellow">Minion</span>
+					One in a <span className="text-minion-yellow">Minion</span>
 				</h1>
 				<p className="truncate text-xs leading-5 text-ocean-teal sm:text-sm dark:text-sky-cyan">
-          Good Code. Better Karma. Banana.
+					Good Code. Better Karma. Banana.
 				</p>
 			</div>
 		</Link>
