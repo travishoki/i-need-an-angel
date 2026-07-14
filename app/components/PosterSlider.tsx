@@ -49,7 +49,7 @@ export default function PosterSlider({
         className={`absolute left-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-ink-brown/80 p-2 text-blush-cream opacity-0 transition-opacity group-hover/slider:opacity-100 sm:flex ${
           canScrollLeft
             ? "cursor-pointer"
-            : "cursor-not-allowed group-hover/slider:opacity-30"
+            : "cursor-not-allowed group-hover/slider:opacity-60"
         }`}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -78,7 +78,11 @@ export default function PosterSlider({
               alt={poster.title}
               width={poster.width}
               height={poster.height}
-              className="h-64 w-auto rounded-lg"
+              className={`h-64 w-auto rounded-lg border-2 transition-colors ${
+                selected.src === poster.src
+                  ? "border-minion-yellow"
+                  : "border-transparent"
+              }`}
             />
             <span
               className={`text-sm font-medium transition-colors ${
@@ -100,7 +104,7 @@ export default function PosterSlider({
         className={`absolute right-1 top-1/2 z-10 hidden -translate-y-1/2 rounded-full bg-ink-brown/80 p-2 text-blush-cream opacity-0 transition-opacity group-hover/slider:opacity-100 sm:flex ${
           canScrollRight
             ? "cursor-pointer"
-            : "cursor-not-allowed group-hover/slider:opacity-30"
+            : "cursor-not-allowed group-hover/slider:opacity-60"
         }`}
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
