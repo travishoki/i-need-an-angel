@@ -4,31 +4,37 @@ import nextTs from 'eslint-config-next/typescript';
 import prettierConfig from 'eslint-config-prettier';
 
 const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  {
-    rules: {
-      'comma-dangle': ['error', 'always-multiline'],
-      indent: [2, 'tab', { SwitchCase: 1 }],
-      quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
-      'react/jsx-sort-props': [
-        'error',
-        { ignoreCase: true, reservedFirst: ['key'] },
-      ],
-      'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
-    },
-  },
-  // Turns off ESLint formatting rules that would otherwise fight Prettier
-  // on save. Must stay last so it can override the configs above.
-  prettierConfig,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-  ]),
+	...nextVitals,
+	...nextTs,
+	{
+		rules: {
+			'comma-dangle': ['error', 'always-multiline'],
+			indent: [2, 'tab', { SwitchCase: 1 }],
+			quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
+			'react/jsx-sort-props': [
+				'error',
+				{ ignoreCase: true, reservedFirst: ['key'] },
+			],
+			'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
+		},
+	},
+	// Turns off ESLint formatting rules that would otherwise fight Prettier
+	// on save. Must stay last so it can override the configs above.
+	prettierConfig,
+	// Re-enable indent after prettierConfig turns it off, so it actually runs.
+	{
+		rules: {
+			indent: [2, 'tab', { SwitchCase: 1 }],
+		},
+	},
+	// Override default ignores of eslint-config-next.
+	globalIgnores([
+		// Default ignores of eslint-config-next:
+		'.next/**',
+		'out/**',
+		'build/**',
+		'next-env.d.ts',
+	]),
 ]);
 
 export default eslintConfig;
