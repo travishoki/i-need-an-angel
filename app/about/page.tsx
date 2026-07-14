@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About | One in a Minion",
+  title: 'About | One in a Minion',
 };
 
 export default function About() {
@@ -10,7 +10,7 @@ export default function About() {
       <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
         <main className="flex w-full max-w-4xl flex-col gap-6 py-32 px-16 bg-white text-left dark:bg-black">
           <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            <span className="text-sky-cyan">About</span> One in a{" "}
+            <span className="text-sky-cyan">About</span> One in a{' '}
             <span className="text-minion-yellow">Minion</span>
           </h1>
           <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">

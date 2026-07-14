@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useRef, useState } from "react";
-import type { Poster } from "../types";
-import PosterItem from "./PosterItem";
-import SliderArrow from "./SliderArrow";
+import { useEffect, useRef, useState } from 'react';
+import type { Poster } from '../types';
+import PosterItem from './PosterItem';
+import SliderArrow from './SliderArrow';
 
 export default function PosterSlider({
   posters,
@@ -29,16 +29,16 @@ export default function PosterSlider({
     updateScrollState();
     const el = scrollRef.current;
     if (!el) return;
-    el.addEventListener("scroll", updateScrollState);
-    window.addEventListener("resize", updateScrollState);
+    el.addEventListener('scroll', updateScrollState);
+    window.addEventListener('resize', updateScrollState);
     return () => {
-      el.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
+      el.removeEventListener('scroll', updateScrollState);
+      window.removeEventListener('resize', updateScrollState);
     };
   }, []);
 
   const scrollByAmount = (amount: number) => {
-    scrollRef.current?.scrollBy({ behavior: "smooth", left: amount });
+    scrollRef.current?.scrollBy({ behavior: 'smooth', left: amount });
   };
 
   return (

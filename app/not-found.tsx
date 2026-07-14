@@ -1,9 +1,9 @@
-import Image from "next/image";
-import Link from "next/link";
-import type { Metadata } from "next";
+import Image from 'next/image';
+import Link from 'next/link';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Page Not Found | One in a Minion",
+  title: 'Page Not Found | One in a Minion',
 };
 
 export default function NotFound() {

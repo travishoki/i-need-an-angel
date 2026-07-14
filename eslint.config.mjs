@@ -1,26 +1,31 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import { defineConfig, globalIgnores } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
     rules: {
-      "react/jsx-sort-props": [
-        "error",
-        { ignoreCase: true, reservedFirst: ["key"] },
+      quotes: [
+        1,
+        'single',
+        { allowTemplateLiterals: true, avoidEscape: true },
       ],
-      "sort-keys": ["error", "asc", { caseSensitive: false, natural: true }],
+      'react/jsx-sort-props': [
+        'error',
+        { ignoreCase: true, reservedFirst: ['key'] },
+      ],
+      'sort-keys': ['error', 'asc', { caseSensitive: false, natural: true }],
     },
   },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
+    '.next/**',
+    'out/**',
+    'build/**',
+    'next-env.d.ts',
   ]),
 ]);
 

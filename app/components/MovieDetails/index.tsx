@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import type { Poster } from "../types";
-import ReadMoreButton from "./ReadMoreButton";
+import { useState } from 'react';
+import type { Poster } from '../types';
+import ReadMoreButton from './ReadMoreButton';
 
 const PREVIEW_LENGTH = 200;
 

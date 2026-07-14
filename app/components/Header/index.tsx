@@ -1,5 +1,5 @@
-import Branding from "./Branding";
-import Navigation from "./Navigation";
+import Branding from './Branding';
+import Navigation from './Navigation';
 
 export default function Header() {
   return (

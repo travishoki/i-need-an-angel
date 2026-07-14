@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import MenuToggleButton from "./MenuToggleButton";
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import MenuToggleButton from './MenuToggleButton';
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
 ];
 
 export default function Navigation() {
@@ -17,8 +17,8 @@ export default function Navigation() {
   const linkClass = (href: string) =>
     `text-sm font-medium transition-colors ${
       pathname === href
-        ? "text-minion-yellow"
-        : "text-zinc-600 hover:text-minion-yellow dark:text-zinc-400"
+        ? 'text-minion-yellow'
+        : 'text-zinc-600 hover:text-minion-yellow dark:text-zinc-400'
     }`;
 
   return (

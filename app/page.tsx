@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import PosterSlider from "./components/PosterSlider";
-import MovieDetails from "./components/MovieDetails";
-import { posters } from "./data/posters";
+import { useState } from 'react';
+import PosterSlider from './components/PosterSlider';
+import MovieDetails from './components/MovieDetails';
+import { posters } from './data/posters';
 
 export default function Home() {
   const [selected, setSelected] = useState(posters[0]);
