@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import Header from "./components/Header";
 import PosterSlider from "./components/PosterSlider";
 import MovieDetails from "./components/MovieDetails";
 
@@ -69,26 +69,14 @@ export default function Home() {
   const [selected, setSelected] = useState(posters[0]);
 
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          src="https://i.pinimg.com/564x/42/03/2d/42032d0e52fed8b6a1293c74f35bfc0f.jpg"
-          alt="Minion angel with wings and halo"
-          width={540}
-          height={405}
-          className="w-[32rem] h-auto self-center rounded-lg"
-        />
-        <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            One in a <span className="text-minion-yellow">Minion</span>
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-ocean-teal dark:text-sky-cyan">
-            Good Code. Better Karma. Banana.
-          </p>
-        </div>
-        <PosterSlider posters={posters} selected={selected} onSelect={setSelected} />
-        <MovieDetails movie={selected} />
-      </main>
+    <div className="flex min-h-full flex-1 flex-col bg-white dark:bg-black">
+      <Header />
+      <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+        <main className="flex flex-1 w-full max-w-4xl flex-col items-center justify-center gap-10 py-32 px-16 bg-white dark:bg-black sm:items-start">
+          <PosterSlider posters={posters} selected={selected} onSelect={setSelected} />
+          <MovieDetails movie={selected} />
+        </main>
+      </div>
     </div>
   );
 }
