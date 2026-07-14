@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Poster } from "./types";
+import type { Poster } from "../types";
 import ReadMoreButton from "./ReadMoreButton";
 
 const PREVIEW_LENGTH = 200;
