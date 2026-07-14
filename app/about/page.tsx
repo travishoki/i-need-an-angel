@@ -22,6 +22,10 @@ export default function About() {
             Built with Next.js and Tailwind CSS, with a color palette pulled
             straight from the movies&apos; own artwork.
           </p>
+          <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            The winged, halo-topped minion in the header is a nod to Angel
+            Studios / Vid Angel&apos;s halo-and-wings branding.
+          </p>
         </main>
       </div>
     </div>
