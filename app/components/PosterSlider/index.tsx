@@ -38,7 +38,7 @@ export default function PosterSlider({
   }, []);
 
   const scrollByAmount = (amount: number) => {
-    scrollRef.current?.scrollBy({ left: amount, behavior: "smooth" });
+    scrollRef.current?.scrollBy({ behavior: "smooth", left: amount });
   };
 
   return (

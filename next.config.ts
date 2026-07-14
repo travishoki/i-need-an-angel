@@ -5,16 +5,16 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "https",
         hostname: "static.wikia.nocookie.net",
-        port: "",
         pathname: "/despicableme/**",
+        port: "",
+        protocol: "https",
       },
       {
-        protocol: "https",
         hostname: "i.pinimg.com",
-        port: "",
         pathname: "/564x/**",
+        port: "",
+        protocol: "https",
       },
     ],
   },
