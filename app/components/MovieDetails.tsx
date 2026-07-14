@@ -7,7 +7,7 @@ export default function MovieDetails({ movie }: { movie: Poster }) {
         {movie.title}
       </h2>
       <p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-        {movie.bio}
+        {movie.description}
       </p>
       <a
         href={movie.link}

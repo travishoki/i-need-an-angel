@@ -2,7 +2,7 @@ export type Poster = {
   src: string;
   title: string;
   link: string;
-  bio: string;
+  description: string;
   width: number;
   height: number;
 };
