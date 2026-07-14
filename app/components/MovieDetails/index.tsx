@@ -31,10 +31,10 @@ export default function MovieDetails({ movie }: { movie: Poster }) {
       )}
 
       <a
-        href={movie.link}
-        target="_blank"
-        rel="noopener noreferrer"
         className="mt-2 rounded-full bg-minion-yellow px-5 py-2.5 text-sm font-semibold text-ink-brown transition-transform hover:scale-105"
+        href={movie.link}
+        rel="noopener noreferrer"
+        target="_blank"
       >
         View on wiki
       </a>

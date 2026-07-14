@@ -50,15 +50,15 @@ export default function PosterSlider({
       />
 
       <div
-        ref={scrollRef}
         className="no-scrollbar flex flex-row items-start gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory"
+        ref={scrollRef}
       >
         {posters.map((poster) => (
           <PosterItem
             key={poster.src}
-            poster={poster}
             isSelected={selected.src === poster.src}
             onSelect={() => onSelect(poster)}
+            poster={poster}
           />
         ))}
       </div>

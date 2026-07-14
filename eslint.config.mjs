@@ -7,6 +7,10 @@ const eslintConfig = defineConfig([
   ...nextTs,
   {
     rules: {
+      "react/jsx-sort-props": [
+        "error",
+        { ignoreCase: true, reservedFirst: ["key"] },
+      ],
       "sort-keys": ["error", "asc", { caseSensitive: false, natural: true }],
     },
   },

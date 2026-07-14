@@ -10,11 +10,11 @@ export default function NotFound() {
   return (
     <div className="flex min-h-full flex-1 flex-col items-center justify-center gap-6 bg-white px-16 py-32 text-center dark:bg-black">
       <Image
-        src="https://i.pinimg.com/564x/42/03/2d/42032d0e52fed8b6a1293c74f35bfc0f.jpg"
         alt="Minion angel with wings and halo"
-        width={540}
-        height={405}
         className="h-64 w-auto rounded-lg"
+        height={405}
+        src="https://i.pinimg.com/564x/42/03/2d/42032d0e52fed8b6a1293c74f35bfc0f.jpg"
+        width={540}
       />
       <div className="flex flex-col items-center gap-2">
         <h1 className="text-3xl font-semibold tracking-tight text-black dark:text-zinc-50">
@@ -26,8 +26,8 @@ export default function NotFound() {
         </p>
       </div>
       <Link
-        href="/"
         className="mt-2 rounded-full bg-minion-yellow px-5 py-2.5 text-sm font-semibold text-ink-brown transition-transform hover:scale-105"
+        href="/"
       >
         Back to Home
       </Link>

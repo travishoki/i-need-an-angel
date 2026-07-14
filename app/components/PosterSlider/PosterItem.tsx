@@ -12,17 +12,17 @@ export default function PosterItem({
 }) {
   return (
     <button
-      onClick={onSelect}
       className="flex flex-shrink-0 snap-start flex-col items-center gap-2 cursor-pointer"
+      onClick={onSelect}
     >
       <Image
-        src={poster.src}
         alt={poster.title}
-        width={poster.width}
-        height={poster.height}
         className={`h-64 w-auto rounded-lg border-4 transition-colors ${
           isSelected ? "border-minion-yellow" : "border-transparent"
         }`}
+        height={poster.height}
+        src={poster.src}
+        width={poster.width}
       />
       <span
         className={`text-sm font-medium transition-colors ${

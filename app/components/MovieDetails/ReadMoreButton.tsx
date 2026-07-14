@@ -7,23 +7,23 @@ export default function ReadMoreButton({
 }) {
   return (
     <button
-      onClick={onClick}
       className="flex cursor-pointer items-center gap-1 text-sm font-medium text-ocean-teal underline dark:text-sky-cyan"
+      onClick={onClick}
     >
       {expanded ? "Read Less" : "Read More"}
       <svg
-        width="14"
+        className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+        fill="none"
         height="14"
         viewBox="0 0 24 24"
-        fill="none"
-        className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+        width="14"
       >
         <path
           d="M6 9l6 6 6-6"
           stroke="currentColor"
-          strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          strokeWidth="2"
         />
       </svg>
     </button>
