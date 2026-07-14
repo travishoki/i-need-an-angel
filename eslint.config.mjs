@@ -21,10 +21,15 @@ const eslintConfig = defineConfig([
 	// Turns off ESLint formatting rules that would otherwise fight Prettier
 	// on save. Must stay last so it can override the configs above.
 	prettierConfig,
-	// Re-enable indent after prettierConfig turns it off, so it actually runs.
+	// Re-enable rules after prettierConfig turns them off, so they actually run.
 	{
 		rules: {
 			indent: [2, 'tab', { SwitchCase: 1 }],
+			quotes: [
+				1,
+				'single',
+				{ allowTemplateLiterals: true, avoidEscape: true },
+			],
 		},
 	},
 	// Override default ignores of eslint-config-next.
