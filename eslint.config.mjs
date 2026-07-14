@@ -8,6 +8,7 @@ const eslintConfig = defineConfig([
   ...nextTs,
   {
     rules: {
+      'comma-dangle': ['error', 'always-multiline'],
       quotes: [1, 'single', { allowTemplateLiterals: true, avoidEscape: true }],
       'react/jsx-sort-props': [
         'error',
