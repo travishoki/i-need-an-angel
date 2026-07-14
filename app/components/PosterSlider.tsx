@@ -78,7 +78,7 @@ export default function PosterSlider({
               alt={poster.title}
               width={poster.width}
               height={poster.height}
-              className={`h-64 w-auto rounded-lg border-2 transition-colors ${
+              className={`h-64 w-auto rounded-lg border-4 transition-colors ${
                 selected.src === poster.src
                   ? "border-minion-yellow"
                   : "border-transparent"
