@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Poster } from "./types";
+import type { Poster } from "../types";
 
 export default function PosterItem({
   poster,

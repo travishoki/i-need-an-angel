@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { Poster } from "./types";
+import type { Poster } from "../types";
 import PosterItem from "./PosterItem";
 import SliderArrow from "./SliderArrow";
 
