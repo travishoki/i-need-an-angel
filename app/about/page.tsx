@@ -31,20 +31,24 @@ export default function About() {
 					</div>
 					<div className="flex flex-col gap-1">
 						<h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
-							Tech Stack
+							Under the Hood
 						</h2>
-						<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-							Built with Next.js and Tailwind CSS.
-						</p>
-					</div>
-					<div className="flex flex-col gap-1">
-						<h2 className="text-xs font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-500">
-							Housekeeping
-						</h2>
-						<p className="max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-							We also added a few ESLint rules along the way, mostly as an
-							exercise to get comfortable with where they go in the config.
-						</p>
+						<ul className="max-w-3xl list-disc space-y-1 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+							<li>Next.js, using the App Router for pages and routing</li>
+							<li>
+								Tailwind CSS, for styling and the movie-inspired color
+								palette
+							</li>
+							<li>
+								A few ESLint rules, added mostly as an exercise to get
+								comfortable with where they go in the config
+							</li>
+							<li>Prettier, wired up for auto-formatting on save</li>
+							<li>
+								Jest render tests on a couple of components, covering
+								expanding, collapsing, and disabled/click behavior
+							</li>
+						</ul>
 					</div>
 				</main>
 			</div>
