@@ -1,5 +1,7 @@
 A small movie poster gallery built with [Next.js](https://nextjs.org) (App Router) and [Tailwind CSS](https://tailwindcss.com). Browse the Despicable Me / Minions poster slider, pick a poster, and read up on the film it belongs to.
 
+![Screenshot of the One in a Minion poster gallery](./docs/screenshot.png)
+
 ## Getting Started
 
 This project uses Node `22.13.0` (see `.nvmrc`). If you use [nvm](https://github.com/nvm-sh/nvm), run `nvm use` to pick up the right version automatically.
