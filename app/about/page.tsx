@@ -34,6 +34,11 @@ export default function About() {
 							Under the Hood
 						</h2>
 						<ul className="max-w-3xl list-disc space-y-1 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">
+							<li>
+								Started from the standard{' '}
+								<code className="text-sm">create-next-app</code> boilerplate
+							</li>
+							<li>Built with assistance of Claude Code</li>
 							<li>Next.js, using the App Router for pages and routing</li>
 							<li>
 								Tailwind CSS, for styling and the movie-inspired color palette
