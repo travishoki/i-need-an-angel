@@ -34,10 +34,11 @@ Open [http://localhost:3000](http://localhost:3000) to see it running.
 
 ## Tech stack
 
-- Next.js (App Router)
+- Next.js (App Router), started from the standard `create-next-app` boilerplate
 - Tailwind CSS
 - ESLint + Prettier
 - Jest + React Testing Library
+- Husky + lint-staged
 
 ## Project structure
 
