@@ -32,6 +32,19 @@ Open [http://localhost:3000](http://localhost:3000) to see it running.
 | `yarn test`         | Runs the Jest test suite                  |
 | `yarn test:watch`   | Runs Jest in watch mode                   |
 
+## Tech stack
+
+- Next.js (App Router)
+- Tailwind CSS
+- ESLint + Prettier
+- Jest + React Testing Library
+
+## Project structure
+
+- `app/` — routes (`/`, `/about`), the root layout, and the `not-found` page, following the Next.js App Router file conventions
+- `app/components/` — one directory per component, each colocated with its own render tests (`*.test.tsx`) where present
+- `app/data/` — static content data (the poster list)
+
 ## Git hooks
 
 [Husky](https://typicode.github.io/husky) + [lint-staged](https://github.com/lint-staged/lint-staged) run automatically on:
@@ -40,16 +53,3 @@ Open [http://localhost:3000](http://localhost:3000) to see it running.
 - **push** — runs the full test suite
 
 These install automatically via the `prepare` script the first time you run `yarn install`.
-
-## Project structure
-
-- `app/` — routes (`/`, `/about`), the root layout, and the `not-found` page, following the Next.js App Router file conventions
-- `app/components/` — one directory per component, each colocated with its own render tests (`*.test.tsx`) where present
-- `app/data/` — static content data (the poster list)
-
-## Tech stack
-
-- Next.js (App Router)
-- Tailwind CSS
-- ESLint + Prettier
-- Jest + React Testing Library
