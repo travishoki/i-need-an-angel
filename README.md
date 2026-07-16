@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A small movie poster gallery built with [Next.js](https://nextjs.org) (App Router) and [Tailwind CSS](https://tailwindcss.com). Browse the Despicable Me / Minions poster slider, pick a poster, and read up on the film it belongs to.
 
 ## Getting Started
 
-First, run the development server:
+This project uses Node `22.13.0` (see `.nvmrc`). If you use [nvm](https://github.com/nvm-sh/nvm), run `nvm use` to pick up the right version automatically.
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see it running.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command             | What it does                              |
+| ------------------- | ----------------------------------------- |
+| `yarn dev`          | Starts the dev server                     |
+| `yarn build`        | Production build                          |
+| `yarn start`        | Runs the production build                 |
+| `yarn lint`         | Runs ESLint                               |
+| `yarn format`       | Formats the codebase with Prettier        |
+| `yarn format:check` | Checks formatting without writing changes |
+| `yarn test`         | Runs the Jest test suite                  |
+| `yarn test:watch`   | Runs Jest in watch mode                   |
 
-## Learn More
+## Git hooks
 
-To learn more about Next.js, take a look at the following resources:
+[Husky](https://typicode.github.io/husky) + [lint-staged](https://github.com/lint-staged/lint-staged) run automatically on:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **commit** — lints and formats staged files
+- **push** — runs the full test suite
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+These install automatically via the `prepare` script the first time you run `yarn install`.
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `app/` — routes (`/`, `/about`), the root layout, and the `not-found` page, following the Next.js App Router file conventions
+- `app/components/` — one directory per component, each colocated with its own render tests (`*.test.tsx`) where present
+- `app/data/` — static content data (the poster list)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tech stack
+
+- Next.js (App Router)
+- Tailwind CSS
+- ESLint + Prettier
+- Jest + React Testing Library
