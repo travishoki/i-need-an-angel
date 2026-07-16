@@ -36,8 +36,7 @@ export default function About() {
 						<ul className="max-w-3xl list-disc space-y-1 pl-5 text-base leading-7 text-zinc-600 dark:text-zinc-400">
 							<li>Next.js, using the App Router for pages and routing</li>
 							<li>
-								Tailwind CSS, for styling and the movie-inspired color
-								palette
+								Tailwind CSS, for styling and the movie-inspired color palette
 							</li>
 							<li>
 								A few ESLint rules, added mostly as an exercise to get
@@ -45,8 +44,12 @@ export default function About() {
 							</li>
 							<li>Prettier, wired up for auto-formatting on save</li>
 							<li>
-								Jest render tests on a couple of components, covering
-								expanding, collapsing, and disabled/click behavior
+								Jest render tests on a couple of components, covering expanding,
+								collapsing, and disabled/click behavior
+							</li>
+							<li>
+								Husky git hooks, running lint-staged on commit and the test
+								suite on push
 							</li>
 						</ul>
 					</div>
