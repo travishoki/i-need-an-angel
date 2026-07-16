@@ -1,4 +1,12 @@
-A small movie poster gallery built with [Next.js](https://nextjs.org) (App Router) and [Tailwind CSS](https://tailwindcss.com). Browse the Despicable Me / Minions poster slider, pick a poster, and read up on the film it belongs to.
+# I need an Angle
+
+My Dad loved minions, this is a site themed around them.
+
+## Description
+
+A small movie poster gallery built with [Next.js](https://nextjs.org) (App Router) and [Tailwind CSS](https://tailwindcss.com).
+
+Browse the Despicable Me / Minions poster slider, pick a poster, and read up on the film it belongs to.
 
 ![Screenshot of the One in a Minion poster gallery](./screenshot.png)
 
