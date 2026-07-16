@@ -1,6 +1,6 @@
 # I need an Angle
 
-My Dad loved minions, this is a site themed around them. I wanted to get familiar with the [Next.js](https://nextjs.org) app and [Tailwind CSS](https://tailwindcss.com) so I build out the base of this project adding styling and Despicable content.
+My Dad loved minions, this is a site themed around them. I wanted to get familiar with the [Next.js](https://nextjs.org) app structure and [Tailwind CSS](https://tailwindcss.com), so I build out the base of this project adding styling and Despicable content.
 
 ## Description
 
