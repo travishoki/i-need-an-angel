@@ -3,14 +3,14 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import MenuToggleButton from './MenuToggleButton';
+import { MenuToggleButton } from './MenuToggleButton';
 
 const navLinks = [
 	{ href: '/', label: 'Home' },
 	{ href: '/about', label: 'About' },
 ];
 
-export default function Navigation() {
+export function Navigation() {
 	const pathname = usePathname();
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 

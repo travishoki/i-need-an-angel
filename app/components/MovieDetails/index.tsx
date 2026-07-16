@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import type { Poster } from '../types';
-import ReadMoreButton from './ReadMoreButton';
+import { ReadMoreButton } from './ReadMoreButton';
 
 const PREVIEW_LENGTH = 200;
 
-export default function MovieDetails({ movie }: { movie: Poster }) {
+export function MovieDetails({ movie }: { movie: Poster }) {
 	const [expanded, setExpanded] = useState(false);
 	const isTruncated = movie.description.length > PREVIEW_LENGTH;
 	const displayedDescription =

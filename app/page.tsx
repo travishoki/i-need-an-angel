@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import PosterSlider from './components/PosterSlider';
-import MovieDetails from './components/MovieDetails';
+import { PosterSlider } from './components/PosterSlider';
+import { MovieDetails } from './components/MovieDetails';
 import { posters } from './data/posters';
 
 export default function Home() {

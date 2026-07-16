@@ -1,4 +1,4 @@
-export default function ReadMoreButton({
+export function ReadMoreButton({
 	expanded,
 	onClick,
 }: {

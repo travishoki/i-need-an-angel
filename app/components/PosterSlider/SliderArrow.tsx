@@ -1,4 +1,4 @@
-export default function SliderArrow({
+export function SliderArrow({
 	direction,
 	disabled,
 	onClick,

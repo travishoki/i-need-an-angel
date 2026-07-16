@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import type { Poster } from '../types';
 
-export default function PosterItem({
+export function PosterItem({
 	isSelected,
 	onSelect,
 	poster,

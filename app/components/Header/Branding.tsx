@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Branding() {
+export function Branding() {
 	return (
 		<Link className="flex min-w-0 items-center gap-3 sm:gap-4" href="/">
 			<Image

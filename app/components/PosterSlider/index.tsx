@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 import type { Poster } from '../types';
-import PosterItem from './PosterItem';
-import SliderArrow from './SliderArrow';
+import { PosterItem } from './PosterItem';
+import { SliderArrow } from './SliderArrow';
 
 const SCROLL_AMOUNT = 320;
 
-export default function PosterSlider({
+export function PosterSlider({
 	onSelect,
 	posters,
 	selected,

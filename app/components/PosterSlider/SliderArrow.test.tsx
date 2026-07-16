@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import SliderArrow from './SliderArrow';
+import { SliderArrow } from './SliderArrow';
 
 const noop = () => {};
 

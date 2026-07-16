@@ -1,4 +1,4 @@
-export default function MenuToggleButton({
+export function MenuToggleButton({
 	isMenuOpen,
 	onClick,
 }: {
