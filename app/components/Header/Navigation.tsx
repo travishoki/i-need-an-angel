@@ -8,6 +8,7 @@ import { MenuToggleButton } from './MenuToggleButton';
 const navLinks = [
 	{ href: '/', label: 'Home' },
 	{ href: '/about', label: 'About' },
+	{ href: '/cats', label: 'Cats' },
 ];
 
 export function Navigation() {
