@@ -8,11 +8,11 @@ export default function CatForm({ setTagValue, tagValue }: CatFormProps) {
 	};
 
 	return (
-		<div className="bg-cat-background mb-[25px] rounded-md p-[20px]">
+		<div className="bg-cat-background mb-[20px] rounded-md p-[20px]">
 			<form className="flex flex-col gap-[10px]" onSubmit={onSubmit}>
 				<Tags setTagValue={setTagValue} tagValue={tagValue} />
 				<input
-					className="bg-cat-primary p-[10px] cursor-pointer"
+					className="bg-cat-primary p-[10px] cursor-pointer w-xs"
 					type="submit"
 					value="Find a Cat"
 				/>
