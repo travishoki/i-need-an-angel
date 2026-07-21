@@ -9,7 +9,7 @@ import { Cat } from './types';
 const CATS_URL = `${ROOT_URL}/api/cats`;
 
 export default function CatContent() {
-	const [catsList, setCatList] = useState<string[]>([]);
+	const [catsList, setCatList] = useState<Cat[]>([]);
 	const [tagValue, setTagValue] = useState('');
 	const [loading, setLoading] = useState(true);
 
@@ -23,8 +23,7 @@ export default function CatContent() {
 		fetch(url)
 			.then((response) => response.json())
 			.then((data: Cat[]) => {
-				const newCatList = data.map((cat) => `${ROOT_URL}/cat/${cat.id}`);
-				setCatList(newCatList);
+				setCatList(data);
 			})
 			.finally(() => {
 				setLoading(false);
