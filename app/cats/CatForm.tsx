@@ -9,9 +9,13 @@ export default function CatForm() {
 
 	return (
 		<div className="bg-cat-background mb-[25px] rounded-md p-[20px]">
-			<form onSubmit={onSubmit}>
+			<form className="flex flex-col gap-[10px]" onSubmit={onSubmit}>
 				<Tags />
-				<input title="Find a Cat" type="submit" />
+				<input
+					className="bg-cat-primary p-[10px] cursor-pointer"
+					type="submit"
+					value="Find a Cat"
+				/>
 			</form>
 		</div>
 	);

@@ -22,7 +22,14 @@ export default function Tags() {
 	};
 
 	return (
-		<select className="bg-white p-[10px]" onChange={onChange} value={value}>
+		<select
+			className={`bg-white p-[10px] ${value ? 'text-black' : 'text-zinc-400'}`}
+			onChange={onChange}
+			value={value}
+		>
+			<option disabled hidden selected value="">
+				Select a tag
+			</option>
 			{tagList.map((tag, index) => (
 				<option key={index} value={tag}>
 					{tag}
