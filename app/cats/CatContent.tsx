@@ -11,6 +11,7 @@ const CATS_URL = `${ROOT_URL}/api/cats`;
 export default function CatContent() {
 	const [catsList, setCatList] = useState<string[]>([]);
 	const [tagValue, setTagValue] = useState('');
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		let url = CATS_URL;
@@ -24,13 +25,22 @@ export default function CatContent() {
 			.then((data: Cat[]) => {
 				const newCatList = data.map((cat) => `${ROOT_URL}/cat/${cat.id}`);
 				setCatList(newCatList);
+			})
+			.finally(() => {
+				setLoading(false);
 			});
 	}, [tagValue]);
 
+	const onTagChange = (tag: string) => {
+		setLoading(true);
+		setTagValue(tag);
+	};
+
 	return (
 		<>
-			<CatForm setTagValue={setTagValue} tagValue={tagValue} />
-			<CatList catsList={catsList} />
+			<CatForm setTagValue={onTagChange} tagValue={tagValue} />
+
+			{loading ? <p>Loading...</p> : <CatList catsList={catsList} />}
 		</>
 	);
 }
