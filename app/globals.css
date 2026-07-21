@@ -28,7 +28,7 @@
 	/* Cat Colors */
 	--color-cat-primary: #7a5d58;
 	--color-cat-accent: #ef5a50;
-	--color-cat-backgroud: #d2ac92;
+	--color-cat-background: #d2ac92;
 }
 
 @media (prefers-color-scheme: dark) {
