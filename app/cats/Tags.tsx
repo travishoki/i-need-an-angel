@@ -22,7 +22,7 @@ export default function Tags({ onTagChange, tagValue }: TagsProps) {
 
 	return (
 		<select
-			className={`bg-white p-[10px] ${tagValue ? 'text-black' : 'text-zinc-400'}`}
+			className={`bg-white px-[10px] py-[5px] rounded ${tagValue ? 'text-black' : 'text-zinc-400'}`}
 			onChange={onChange}
 			value={tagValue}
 		>
