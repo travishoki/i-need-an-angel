@@ -27,7 +27,7 @@ export default function CatList() {
 			{catsList.map((cat, index) => (
 				<li
 					key={index}
-					className="bg-cat-accent h-[300px] w-[300px] rounded-lg"
+					className="bg-cat-accent h-[300px] w-[300px] rounded-lg overflow-hidden"
 				>
 					<img alt="Cat" className="h-full w-full object-contain" src={cat} />
 				</li>
