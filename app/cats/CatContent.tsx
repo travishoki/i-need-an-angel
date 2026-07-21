@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useCallback, useEffect, useState } from 'react';
+import { SubmitEvent, useCallback, useEffect, useState } from 'react';
 import CatForm from './CatForm';
 import CatList from './CatList';
 import { ROOT_URL } from './const';
@@ -35,7 +35,7 @@ export default function CatContent() {
 		fetchCats('');
 	}, [fetchCats]);
 
-	const onClickSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const onClickSubmit = (e: SubmitEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		setLoading(true);

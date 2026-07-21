@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent } from 'react';
+import { SubmitEvent } from 'react';
 import Tags from './Tags';
 
 export default function CatForm({
@@ -13,7 +13,7 @@ export default function CatForm({
 			<form className="flex flex-col gap-[10px]" onSubmit={onClickSubmit}>
 				<Tags onTagChange={onTagChange} tagValue={tagValue} />
 				<input
-					className="bg-cat-primary px-[20px] py-[10px] cursor-pointer w-fit rounded self-center"
+					className="bg-cat-primary px-[15px] py-[5px] cursor-pointer w-fit rounded self-center"
 					type="submit"
 					value="Find a Cat"
 				/>
@@ -23,7 +23,7 @@ export default function CatForm({
 }
 
 type CatFormProps = {
-	onClickSubmit: (e: FormEvent<HTMLFormElement>) => void;
+	onClickSubmit: (e: SubmitEvent<HTMLFormElement>) => void;
 	onTagChange: (tag: string) => void;
 	tagValue: string | undefined;
 };
