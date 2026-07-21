@@ -2,7 +2,7 @@
 
 import Tags from './Tags';
 
-export default function CatForm() {
+export default function CatForm({ setTagValue, tagValue }: CatFormProps) {
 	const onSubmit = () => {
 		console.log('onSubmit');
 	};
@@ -10,7 +10,7 @@ export default function CatForm() {
 	return (
 		<div className="bg-cat-background mb-[25px] rounded-md p-[20px]">
 			<form className="flex flex-col gap-[10px]" onSubmit={onSubmit}>
-				<Tags />
+				<Tags setTagValue={setTagValue} tagValue={tagValue} />
 				<input
 					className="bg-cat-primary p-[10px] cursor-pointer"
 					type="submit"
@@ -20,3 +20,8 @@ export default function CatForm() {
 		</div>
 	);
 }
+
+type CatFormProps = {
+	setTagValue: (tag: string) => void;
+	tagValue: string | undefined;
+};

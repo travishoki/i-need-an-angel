@@ -5,9 +5,8 @@ import { ROOT_URL } from './const';
 
 const TAGS_URL = `${ROOT_URL}/api/tags`;
 
-export default function Tags() {
+export default function Tags({ setTagValue, tagValue }: TagsProps) {
 	const [tagList, setTagList] = useState<string[]>([]);
-	const [value, setValue] = useState('');
 
 	useEffect(() => {
 		fetch(TAGS_URL)
@@ -18,18 +17,15 @@ export default function Tags() {
 	}, []);
 
 	const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		setValue(e.target.value);
+		setTagValue(e.target.value);
 	};
 
 	return (
 		<select
-			className={`bg-white p-[10px] ${value ? 'text-black' : 'text-zinc-400'}`}
+			className={`bg-white p-[10px] ${tagValue ? 'text-black' : 'text-zinc-400'}`}
 			onChange={onChange}
-			value={value}
+			value={tagValue}
 		>
-			<option disabled hidden selected value="">
-				Select a tag
-			</option>
 			{tagList.map((tag, index) => (
 				<option key={index} value={tag}>
 					{tag}
@@ -38,3 +34,8 @@ export default function Tags() {
 		</select>
 	);
 }
+
+type TagsProps = {
+	setTagValue: (tag: string) => void;
+	tagValue: string | undefined;
+};
