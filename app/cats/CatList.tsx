@@ -1,8 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-
-const ROOT_URL = 'https://cataas.com';
+import { ROOT_URL } from './const';
 
 const CATS_URL = `${ROOT_URL}/api/cats`;
 
