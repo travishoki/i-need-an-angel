@@ -23,10 +23,13 @@ export default function CatList() {
 	}, []);
 
 	return (
-		<ul>
+		<ul className="flex flex-wrap justify-center gap-[20px]">
 			{catsList.map((cat, index) => (
-				<li key={index}>
-					<img alt="Cat" src={cat} />
+				<li
+					key={index}
+					className="bg-cat-accent h-[300px] w-[300px] rounded-lg"
+				>
+					<img alt="Cat" className="h-full w-full object-contain" src={cat} />
 				</li>
 			))}
 		</ul>

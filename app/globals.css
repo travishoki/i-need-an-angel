@@ -24,6 +24,11 @@
 	--color-blush-cream: #fce2ce;
 	--color-warm-sand: #e6af83;
 	--color-ink-brown: #2a2221;
+
+	/* Cat Colors */
+	--color-cat-primary: #7a5d58;
+	--color-cat-accent: #ef5a50;
+	--color-cat-backgroud: #d2ac92;
 }
 
 @media (prefers-color-scheme: dark) {
