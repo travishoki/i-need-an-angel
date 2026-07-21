@@ -1,12 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { ROOT_URL } from './const';
 
 const TAGS_URL = `${ROOT_URL}/api/tags`;
 
 export default function Tags() {
 	const [tagList, setTagList] = useState<string[]>([]);
+	const [value, setValue] = useState('');
 
 	useEffect(() => {
 		fetch(TAGS_URL)
@@ -16,8 +17,12 @@ export default function Tags() {
 			});
 	}, []);
 
+	const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
+		setValue(e.target.value);
+	};
+
 	return (
-		<select className="bg-white p-[10px]">
+		<select className="bg-white p-[10px]" onChange={onChange} value={value}>
 			{tagList.map((tag, index) => (
 				<option key={index} value={tag}>
 					{tag}
