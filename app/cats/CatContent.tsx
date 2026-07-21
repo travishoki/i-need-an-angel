@@ -13,13 +13,19 @@ export default function CatContent() {
 	const [tagValue, setTagValue] = useState('');
 
 	useEffect(() => {
-		fetch(CATS_URL)
+		let url = CATS_URL;
+
+		if (tagValue) {
+			url += `?tags=${tagValue}`;
+		}
+
+		fetch(url)
 			.then((response) => response.json())
 			.then((data: Cat[]) => {
 				const newCatList = data.map((cat) => `${ROOT_URL}/cat/${cat.id}`);
 				setCatList(newCatList);
 			});
-	}, []);
+	}, [tagValue]);
 
 	return (
 		<>
