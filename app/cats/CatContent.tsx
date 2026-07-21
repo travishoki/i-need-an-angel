@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useState } from 'react';
 import CatForm from './CatForm';
 import CatList from './CatList';
 import { ROOT_URL } from './const';
@@ -13,11 +13,11 @@ export default function CatContent() {
 	const [tagValue, setTagValue] = useState('');
 	const [loading, setLoading] = useState(true);
 
-	useEffect(() => {
+	const fetchCats = useCallback((tag: string) => {
 		let url = CATS_URL;
 
-		if (tagValue) {
-			url += `?tags=${tagValue}`;
+		if (tag) {
+			url += `?tags=${tag}`;
 		}
 
 		fetch(url)
@@ -29,16 +29,26 @@ export default function CatContent() {
 			.finally(() => {
 				setLoading(false);
 			});
-	}, [tagValue]);
+	}, []);
 
-	const onTagChange = (tag: string) => {
+	useEffect(() => {
+		fetchCats('');
+	}, [fetchCats]);
+
+	const onClickSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
 		setLoading(true);
-		setTagValue(tag);
+		fetchCats(tagValue);
 	};
 
 	return (
 		<>
-			<CatForm setTagValue={onTagChange} tagValue={tagValue} />
+			<CatForm
+				onClickSubmit={onClickSubmit}
+				onTagChange={setTagValue}
+				tagValue={tagValue}
+			/>
 
 			{loading ? <p>Loading...</p> : <CatList catsList={catsList} />}
 		</>

@@ -1,16 +1,17 @@
 'use client';
 
+import { FormEvent } from 'react';
 import Tags from './Tags';
 
-export default function CatForm({ setTagValue, tagValue }: CatFormProps) {
-	const onSubmit = () => {
-		console.log('onSubmit');
-	};
-
+export default function CatForm({
+	onClickSubmit,
+	onTagChange,
+	tagValue,
+}: CatFormProps) {
 	return (
 		<div className="bg-cat-background mb-[20px] rounded-md p-[20px]">
-			<form className="flex flex-col gap-[10px]" onSubmit={onSubmit}>
-				<Tags setTagValue={setTagValue} tagValue={tagValue} />
+			<form className="flex flex-col gap-[10px]" onSubmit={onClickSubmit}>
+				<Tags onTagChange={onTagChange} tagValue={tagValue} />
 				<input
 					className="bg-cat-primary p-[10px] cursor-pointer w-xs"
 					type="submit"
@@ -22,6 +23,7 @@ export default function CatForm({ setTagValue, tagValue }: CatFormProps) {
 }
 
 type CatFormProps = {
-	setTagValue: (tag: string) => void;
+	onClickSubmit: (e: FormEvent<HTMLFormElement>) => void;
+	onTagChange: (tag: string) => void;
 	tagValue: string | undefined;
 };
