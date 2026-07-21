@@ -26,8 +26,12 @@ export default function Tags({ onTagChange, tagValue }: TagsProps) {
 			onChange={onChange}
 			value={tagValue}
 		>
+			<option className="text-zinc-400" value="">
+				Select a tag
+			</option>
+
 			{tagList.map((tag, index) => (
-				<option key={index} value={tag}>
+				<option key={index} className="text-black" value={tag}>
 					{tag}
 				</option>
 			))}
