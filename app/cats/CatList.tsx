@@ -1,26 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { ROOT_URL } from './const';
-
-const CATS_URL = `${ROOT_URL}/api/cats`;
-
-type Cat = {
-	id: string;
-};
-
-export default function CatList() {
-	const [catsList, setCatList] = useState<string[]>([]);
-
-	useEffect(() => {
-		fetch(CATS_URL)
-			.then((response) => response.json())
-			.then((data: Cat[]) => {
-				const newCatList = data.map((cat) => `${ROOT_URL}/cat/${cat.id}`);
-				setCatList(newCatList);
-			});
-	}, []);
-
+export default function CatList({ catsList }: CatListProps) {
 	return (
 		<ul className="flex flex-wrap justify-center gap-[20px]">
 			{catsList.map((cat, index) => (
@@ -34,3 +14,7 @@ export default function CatList() {
 		</ul>
 	);
 }
+
+type CatListProps = {
+	catsList: string[];
+};
