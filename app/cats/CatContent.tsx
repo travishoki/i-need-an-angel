@@ -69,26 +69,31 @@ export default function CatContent() {
 				<p>Loading...</p>
 			) : (
 				<>
-					{currentCat && (
-						<CatCard
-							catId={currentCat.id}
-							isFavorite={favoriteIds.includes(currentCat.id)}
-							onToggleFavorite={onToggleFavorite}
-							url={currentCat.url}
-						/>
-					)}
-
-					{favoriteIds.length ? (
-						<>
-							<h2 className="mt-[30px] mb-[20px] text-xs font-semibold tracking-wide text-zinc-500 uppercase">
-								Favorites
-							</h2>
+					<div className="mb-[20px]">
+						{currentCat && (
+							<CatCard
+								catId={currentCat.id}
+								isFavorite={favoriteIds.includes(currentCat.id)}
+								onToggleFavorite={onToggleFavorite}
+								url={currentCat.url}
+							/>
+						)}
+					</div>
+					<div className="mt-[30px] text-center">
+						<h2 className="mb-[10px] text-lg font-semibold tracking-wide text-zinc-500 uppercase">
+							Favorites
+						</h2>
+						{favoriteIds.length ? (
 							<FavoritedCatList
 								favoriteIds={favoriteIds}
 								onToggleFavorite={onToggleFavorite}
 							/>
-						</>
-					) : null}
+						) : (
+							<p className="text-center">
+								Favorite a cat image to add it to the list
+							</p>
+						)}
+					</div>
 				</>
 			)}
 		</>
