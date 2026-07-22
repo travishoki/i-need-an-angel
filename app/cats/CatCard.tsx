@@ -28,7 +28,7 @@ export default function CatCard({ cat }: CatCardProps) {
 				/>
 			</Link>
 
-			<FavoriteButton />
+			<FavoriteButton catId={cat.id} />
 		</li>
 	);
 }
