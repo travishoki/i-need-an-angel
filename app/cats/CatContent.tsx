@@ -44,8 +44,8 @@ export default function CatContent() {
 	return (
 		<>
 			<CatForm
+				onChangeTag={setTagValue}
 				onClickSubmit={onClickSubmit}
-				onTagChange={setTagValue}
 				tagValue={tagValue}
 			/>
 

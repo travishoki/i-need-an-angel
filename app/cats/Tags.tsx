@@ -5,7 +5,7 @@ import { ROOT_URL } from './const';
 
 const TAGS_URL = `${ROOT_URL}/api/tags`;
 
-export default function Tags({ onTagChange, tagValue }: TagsProps) {
+export default function Tags({ onChangeTag, tagValue }: TagsProps) {
 	const [tagList, setTagList] = useState<string[]>([]);
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ export default function Tags({ onTagChange, tagValue }: TagsProps) {
 	}, []);
 
 	const onChange = (e: ChangeEvent<HTMLSelectElement>) => {
-		onTagChange(e.target.value);
+		onChangeTag(e.target.value);
 	};
 
 	return (
@@ -40,6 +40,6 @@ export default function Tags({ onTagChange, tagValue }: TagsProps) {
 }
 
 type TagsProps = {
-	onTagChange: (tag: string) => void;
+	onChangeTag: (tag: string) => void;
 	tagValue: string | undefined;
 };
