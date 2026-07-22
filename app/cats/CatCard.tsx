@@ -7,7 +7,11 @@ import { ROOT_URL } from './const';
 import FavoriteButton from './FavoriteButton';
 import { Cat } from './types';
 
-export default function CatCard({ cat }: CatCardProps) {
+export default function CatCard({
+	cat,
+	isFavorite,
+	onToggleFavorite,
+}: CatCardProps) {
 	// Animates the whole card in once its image has actually arrived. Also runs
 	// on error, so a failed image shows its broken state rather than leaving the
 	// card invisible at opacity 0.
@@ -28,11 +32,16 @@ export default function CatCard({ cat }: CatCardProps) {
 				/>
 			</Link>
 
-			<FavoriteButton catId={cat.id} />
+			<FavoriteButton
+				isFavorite={isFavorite}
+				onClick={() => onToggleFavorite(cat.id)}
+			/>
 		</li>
 	);
 }
 
 type CatCardProps = {
 	cat: Cat;
+	isFavorite: boolean;
+	onToggleFavorite: (id: string) => void;
 };

@@ -1,22 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-
-import { isCatFavorite, toggleCatFavorite } from './FavoriteButton.helpers';
-
-export default function FavoriteButton({ catId }: FavoriteButtonProps) {
-	const [isFavorite, setIsFavorite] = useState(() => isCatFavorite(catId));
-
-	const onClickFavorite = () => {
-		setIsFavorite(toggleCatFavorite(catId));
-	};
-
+export default function FavoriteButton({
+	isFavorite,
+	onClick,
+}: FavoriteButtonProps) {
 	return (
 		<button
 			aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
 			aria-pressed={isFavorite}
 			className="absolute top-[10px] right-[10px] cursor-pointer text-white transition-transform hover:scale-110"
-			onClick={onClickFavorite}
+			onClick={onClick}
 			type="button"
 		>
 			<svg
@@ -33,5 +26,6 @@ export default function FavoriteButton({ catId }: FavoriteButtonProps) {
 }
 
 type FavoriteButtonProps = {
-	catId: string;
+	isFavorite: boolean;
+	onClick: () => void;
 };

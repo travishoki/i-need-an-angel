@@ -1,6 +1,6 @@
 const STORAGE_KEY = 'favorite-cat-ids';
 
-function readFavorites(): string[] {
+export function getFavorites(): string[] {
 	if (typeof window === 'undefined') {
 		return [];
 	}
@@ -15,23 +15,22 @@ function readFavorites(): string[] {
 	}
 }
 
-export function isCatFavorite(id: string) {
-	return readFavorites().includes(id);
-}
-
-export function toggleCatFavorite(id: string) {
-	const favorites = readFavorites();
-	const isFavorite = favorites.includes(id);
-
-	const updated = isFavorite
-		? favorites.filter((favoriteId) => favoriteId !== id)
-		: [...favorites, id];
-
+function saveFavorites(ids: string[]) {
 	try {
-		sessionStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+		sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
 	} catch {
 		// Storage can be unavailable or full; the toggle still reflects in the UI.
 	}
+}
 
-	return !isFavorite;
+export function toggleCatFavorite(id: string): string[] {
+	const favorites = getFavorites();
+
+	const updated = favorites.includes(id)
+		? favorites.filter((favoriteId) => favoriteId !== id)
+		: [...favorites, id];
+
+	saveFavorites(updated);
+
+	return updated;
 }
