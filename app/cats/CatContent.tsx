@@ -65,11 +65,13 @@ export default function CatContent() {
 				textValue={textValue}
 			/>
 
-			{loading ? (
-				<p>Loading...</p>
-			) : (
-				<>
-					<div className="mb-[20px]">
+			<div className="mb-[20px]">
+				{loading ? (
+					<div className="flex min-h-[300px] min-w-[300px] items-center justify-center">
+						<p className="text-center">Loading...</p>
+					</div>
+				) : (
+					<>
 						{currentCat && (
 							<CatCard
 								catId={currentCat.id}
@@ -79,23 +81,22 @@ export default function CatContent() {
 								url={currentCat.url}
 							/>
 						)}
-					</div>
-					<>
-						<h2 className="mb-[10px] text-center text-lg font-semibold tracking-wide text-zinc-500 uppercase">
-							Favorites
-						</h2>
-						{favoriteIds.length ? (
-							<FavoritedCatList
-								favoriteIds={favoriteIds}
-								onToggleFavorite={onToggleFavorite}
-							/>
-						) : (
-							<p className="text-center">
-								Favorite a cat image to add it to the list
-							</p>
-						)}
 					</>
-				</>
+				)}
+			</div>
+
+			<h2 className="mb-[10px] text-center text-lg font-semibold tracking-wide text-zinc-500 uppercase">
+				Favorites
+			</h2>
+			{favoriteIds.length ? (
+				<FavoritedCatList
+					favoriteIds={favoriteIds}
+					onToggleFavorite={onToggleFavorite}
+				/>
+			) : (
+				<p className="text-center">
+					Favorite a cat image to add it to the list
+				</p>
 			)}
 		</>
 	);
