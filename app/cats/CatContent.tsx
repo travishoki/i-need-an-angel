@@ -82,7 +82,7 @@ export default function CatContent() {
 								catId={currentCat.id}
 								isFavorite={favoriteIds.includes(currentCat.id)}
 								onToggleFavorite={onToggleFavorite}
-								size={300}
+								size="m"
 								url={currentCat.url}
 							/>
 						)}

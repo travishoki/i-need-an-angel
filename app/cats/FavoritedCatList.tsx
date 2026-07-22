@@ -24,7 +24,7 @@ export default function FavoritedCatList({
 					catId={cat.id}
 					isFavorite={true}
 					onToggleFavorite={onToggleFavorite}
-					size={150}
+					size="s"
 					url={cat.url}
 				/>
 			))}

@@ -3,6 +3,7 @@
 export default function FavoriteButton({
 	isFavorite,
 	onClick,
+	size,
 }: FavoriteButtonProps) {
 	return (
 		<button
@@ -13,11 +14,13 @@ export default function FavoriteButton({
 			type="button"
 		>
 			<svg
-				className="h-[28px] w-[28px] drop-shadow"
+				className="drop-shadow"
 				fill={isFavorite ? 'currentColor' : 'none'}
+				height={size}
 				stroke="currentColor"
 				strokeWidth="2"
 				viewBox="0 0 24 24"
+				width={size}
 			>
 				<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l8.8 8.8 8.8-8.8a5.5 5.5 0 0 0 0-7.8z" />
 			</svg>
@@ -28,4 +31,5 @@ export default function FavoriteButton({
 type FavoriteButtonProps = {
 	isFavorite: boolean;
 	onClick: () => void;
+	size: number;
 };

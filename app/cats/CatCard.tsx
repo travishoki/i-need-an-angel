@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SyntheticEvent } from 'react';
 
 import FavoriteButton from './FavoriteButton';
+import { getCardSize, getHeartSize } from './CatCard.helpers';
 
 export default function CatCard({
 	catId,
@@ -19,10 +20,13 @@ export default function CatCard({
 		e.currentTarget.closest('li')?.classList.add('fade-in');
 	};
 
+	const cardSize = getCardSize(size);
+	const heartSize = getHeartSize(size);
+
 	return (
 		<li
 			className="bg-cat-accent relative overflow-hidden rounded-lg opacity-0"
-			style={{ height: size, width: size }}
+			style={{ height: cardSize, width: cardSize }}
 		>
 			<Link className="block h-full w-full" href={`/cat/${catId}`}>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
@@ -38,6 +42,7 @@ export default function CatCard({
 			<FavoriteButton
 				isFavorite={isFavorite}
 				onClick={() => onToggleFavorite(catId)}
+				size={heartSize}
 			/>
 		</li>
 	);
@@ -47,6 +52,6 @@ type CatCardProps = {
 	catId: string;
 	isFavorite: boolean;
 	onToggleFavorite: (id: string) => void;
-	size: number;
+	size: 's' | 'm' | 'l';
 	url: string;
 };
