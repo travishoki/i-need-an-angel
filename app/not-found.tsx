@@ -2,8 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+import { pageTitle } from './helpers';
+
 export const metadata: Metadata = {
-	title: 'Page Not Found | One in a Minion',
+	title: pageTitle('Page Not Found'),
 };
 
 export default function NotFound() {

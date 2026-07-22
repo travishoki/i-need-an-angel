@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 
+import { pageTitle } from '../helpers';
+
 export const metadata: Metadata = {
-	title: 'About | One in a Minion',
+	title: pageTitle('About'),
 };
 
 export default function About() {

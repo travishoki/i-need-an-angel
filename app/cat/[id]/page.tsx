@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { pageTitle } from '../../helpers';
 import BackButton from '../BackButton';
 import CatImage from '../CatImage';
 import CatTags from '../CatTags';
@@ -18,10 +19,10 @@ export async function generateMetadata({
 	const cat = await getCat(id);
 
 	if (!cat) {
-		return { title: 'Cat Not Found | One in a Minion' };
+		return { title: pageTitle('Cat Not Found') };
 	}
 
-	return { title: `${cat.tags[0] ?? 'Cat'} | One in a Minion` };
+	return { title: pageTitle(cat.tags[0] ?? 'Cat') };
 }
 
 export default async function CatPage({ params }: CatPageProps) {

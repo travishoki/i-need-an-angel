@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 
+import { pageTitle } from '../helpers';
 import CatContent from './CatContent';
 import Logo from './Logo';
 
 export const metadata: Metadata = {
-	title: 'Cats | One in a Minion',
+	title: pageTitle('Cats'),
 };
 
 export default function Cats() {
