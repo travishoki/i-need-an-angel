@@ -85,10 +85,6 @@ export default function CatContent() {
 								Favorites
 							</h2>
 							<CatList
-								catsList={favoriteIds.map((id) => ({
-									id,
-									url: `${ROOT_URL}/cat/${id}`,
-								}))}
 								favoriteIds={favoriteIds}
 								onToggleFavorite={onToggleFavorite}
 							/>
