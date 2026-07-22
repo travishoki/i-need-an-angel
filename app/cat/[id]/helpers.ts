@@ -1,5 +1,5 @@
-import { CAT_URL } from '../cats/const';
-import { CatDetails } from '../cats/types';
+import { CAT_URL } from '../../cats/const';
+import { CatDetails } from '../../cats/types';
 
 /**
  * Fetches a single cat, or null when the id doesn't match one.

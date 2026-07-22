@@ -1,5 +1,5 @@
-import { ROOT_URL } from '../cats/const';
-import { CatDetails } from '../cats/types';
+import { ROOT_URL } from '../../cats/const';
+import { CatDetails } from '../../cats/types';
 
 export default function CatImage({ cat }: CatImageProps) {
 	const alt = cat.tags.join(', ') || 'Cat';

@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import { pageTitle } from '../../helpers';
-import BackButton from '../BackButton';
-import CatImage from '../CatImage';
-import CatTags from '../CatTags';
-import Details from '../Details';
-import { getCat } from '../helpers';
+import BackButton from './BackButton';
+import CatImage from './CatImage';
+import CatTags from './CatTags';
+import Details from './Details';
+import { getCat } from './helpers';
 
 type CatPageProps = {
 	params: Promise<{ id: string }>;
