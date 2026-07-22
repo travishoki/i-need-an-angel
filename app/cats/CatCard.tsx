@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { SyntheticEvent } from 'react';
 
 import { ROOT_URL } from './const';
+import FavoriteButton from './FavoriteButton';
 import { Cat } from './types';
 
 export default function CatCard({ cat }: CatCardProps) {
@@ -26,6 +27,8 @@ export default function CatCard({ cat }: CatCardProps) {
 					src={`${ROOT_URL}/cat/${cat.id}`}
 				/>
 			</Link>
+
+			<FavoriteButton />
 		</li>
 	);
 }
