@@ -1,12 +1,12 @@
 import { ROOT_URL } from '../cats/const';
-import { CatDetails } from '../cats/types';
+import { Cat } from '../cats/types';
 
 const CAT_URL = `${ROOT_URL}/cat`;
 
 /**
  * Fetches a single cat, or null when the id doesn't match one.
  */
-export function getCat(id: string): Promise<CatDetails | null> {
+export function getCat(id: string): Promise<Cat | null> {
 	return fetch(`${CAT_URL}/${id}?json=true`).then((response) =>
 		response.ok ? response.json() : null,
 	);

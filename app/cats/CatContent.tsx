@@ -1,13 +1,13 @@
 'use client';
 
 import { SubmitEvent, useCallback, useEffect, useState } from 'react';
+import { buildCatUrl } from './CatContent.helpers';
 import CatForm from './CatForm';
 import CatList from './CatList';
-import { ROOT_URL } from './const';
 import { getFavorites, toggleCatFavorite } from './FavoriteButton.helpers';
 import { Cat } from './types';
-
-const CATS_URL = `${ROOT_URL}/cat`;
+import CatCard from './CatCard';
+import { ROOT_URL } from './const';
 
 export default function CatContent() {
 	const [currentCat, setCurrentCat] = useState<Cat>();
@@ -15,7 +15,6 @@ export default function CatContent() {
 	const [textValue, setTextValue] = useState('');
 	const [loading, setLoading] = useState(true);
 
-	// Seeded from storage, then kept here so both lists render from one source.
 	const [favoriteIds, setFavoriteIds] = useState(getFavorites);
 
 	const onToggleFavorite = (id: string) => {
@@ -24,17 +23,7 @@ export default function CatContent() {
 
 	const fetchCats = useCallback(
 		({ tag, text }: { tag?: string; text?: string }) => {
-			let url = CATS_URL;
-
-			if (tag || text) {
-				url += '?';
-			}
-			if (tag) {
-				url += `tags=${tag}`;
-			}
-			if (text) {
-				url += `says=${text}`;
-			}
+			const url = buildCatUrl({ tag, text });
 
 			fetch(url, {
 				headers: {
@@ -61,7 +50,10 @@ export default function CatContent() {
 		e.preventDefault();
 
 		setLoading(true);
-		fetchCats({ tag: tagValue, text: textValue });
+		fetchCats({
+			tag: tagValue,
+			text: textValue,
+		});
 	};
 
 	return (
@@ -78,11 +70,14 @@ export default function CatContent() {
 				<p>Loading...</p>
 			) : (
 				<>
-					<CatList
-						catsList={currentCat ? [currentCat] : []}
-						favoriteIds={favoriteIds}
-						onToggleFavorite={onToggleFavorite}
-					/>
+					{currentCat && (
+						<CatCard
+							catId={currentCat.id}
+							isFavorite={false} // TODO: add in value
+							onToggleFavorite={onToggleFavorite}
+							url={currentCat.url}
+						/>
+					)}
 
 					{favoriteIds.length ? (
 						<>
@@ -90,7 +85,10 @@ export default function CatContent() {
 								Favorites
 							</h2>
 							<CatList
-								catsList={favoriteIds.map((id) => ({ id }))}
+								catsList={favoriteIds.map((id) => ({
+									id,
+									url: `${ROOT_URL}/cat/${id}`,
+								}))}
 								favoriteIds={favoriteIds}
 								onToggleFavorite={onToggleFavorite}
 							/>

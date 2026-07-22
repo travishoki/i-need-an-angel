@@ -13,10 +13,6 @@ export default function Details({ cat }: DetailsProps) {
 					<dd>{formatDate(cat.created_at)}</dd>
 				</div>
 				<div className="flex gap-2">
-					<dt className="font-medium">Type:</dt>
-					<dd>{cat.mimetype}</dd>
-				</div>
-				<div className="flex gap-2">
 					<dt className="font-medium">ID:</dt>
 					<dd>{cat.id}</dd>
 				</div>

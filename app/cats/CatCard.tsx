@@ -3,14 +3,13 @@
 import Link from 'next/link';
 import { SyntheticEvent } from 'react';
 
-import { ROOT_URL } from './const';
 import FavoriteButton from './FavoriteButton';
-import { Cat } from './types';
 
 export default function CatCard({
-	cat,
+	catId,
 	isFavorite,
 	onToggleFavorite,
+	url,
 }: CatCardProps) {
 	// Animates the whole card in once its image has actually arrived. Also runs
 	// on error, so a failed image shows its broken state rather than leaving the
@@ -21,27 +20,28 @@ export default function CatCard({
 
 	return (
 		<li className="bg-cat-accent relative h-[300px] w-[300px] overflow-hidden rounded-lg opacity-0">
-			<Link className="block h-full w-full" href={`/cat/${cat.id}`}>
+			<Link className="block h-full w-full" href={`/cat/${catId}`}>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
 					alt="Cat"
 					className="h-full w-full object-contain"
 					onError={revealCard}
 					onLoad={revealCard}
-					src={`${ROOT_URL}/cat/${cat.id}`}
+					src={url}
 				/>
 			</Link>
 
 			<FavoriteButton
 				isFavorite={isFavorite}
-				onClick={() => onToggleFavorite(cat.id)}
+				onClick={() => onToggleFavorite(catId)}
 			/>
 		</li>
 	);
 }
 
 type CatCardProps = {
-	cat: Cat;
+	catId: string;
 	isFavorite: boolean;
 	onToggleFavorite: (id: string) => void;
+	url: string;
 };

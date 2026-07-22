@@ -1,5 +1,6 @@
 export type Cat = {
 	id: string;
+	url: string;
 };
 
 export type CatDetails = {
@@ -7,4 +8,5 @@ export type CatDetails = {
 	id: string;
 	mimetype: string;
 	tags: string[];
+	url: string;
 };

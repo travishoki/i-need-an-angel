@@ -13,9 +13,10 @@ export default function CatList({
 			{catsList.map((cat) => (
 				<CatCard
 					key={cat.id}
-					cat={cat}
+					catId={cat.id}
 					isFavorite={favoriteIds.includes(cat.id)}
 					onToggleFavorite={onToggleFavorite}
+					url={cat.url}
 				/>
 			))}
 		</ul>
