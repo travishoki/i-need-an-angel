@@ -14,7 +14,12 @@ export default function CatContent() {
 	const [textValue, setTextValue] = useState('');
 	const [loading, setLoading] = useState(true);
 
-	const [favoriteIds, setFavoriteIds] = useState(getFavorites);
+	const [favoriteIds, setFavoriteIds] = useState<string[]>([]);
+
+	useEffect(() => {
+		// eslint-disable-next-line react-hooks/set-state-in-effect
+		setFavoriteIds(getFavorites());
+	}, []);
 
 	const fetchCats = useCallback(
 		({ tag, text }: { tag?: string; text?: string }) => {
