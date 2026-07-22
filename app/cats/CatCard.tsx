@@ -9,6 +9,7 @@ export default function CatCard({
 	catId,
 	isFavorite,
 	onToggleFavorite,
+	size,
 	url,
 }: CatCardProps) {
 	// Animates the whole card in once its image has actually arrived. Also runs
@@ -19,7 +20,10 @@ export default function CatCard({
 	};
 
 	return (
-		<li className="bg-cat-accent relative h-[300px] w-[300px] overflow-hidden rounded-lg opacity-0">
+		<li
+			className="bg-cat-accent relative overflow-hidden rounded-lg opacity-0"
+			style={{ height: size, width: size }}
+		>
 			<Link className="block h-full w-full" href={`/cat/${catId}`}>
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
@@ -43,5 +47,6 @@ type CatCardProps = {
 	catId: string;
 	isFavorite: boolean;
 	onToggleFavorite: (id: string) => void;
+	size: number;
 	url: string;
 };

@@ -1,6 +1,4 @@
-import { ROOT_URL } from './const';
-
-const CAT_URL = `${ROOT_URL}/cat`;
+import { CAT_URL } from './const';
 
 export function buildCatUrl({ tag, text }: BuildCatUrlOptions) {
 	let url = CAT_URL;

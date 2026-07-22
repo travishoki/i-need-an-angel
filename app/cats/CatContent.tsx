@@ -75,12 +75,13 @@ export default function CatContent() {
 								catId={currentCat.id}
 								isFavorite={favoriteIds.includes(currentCat.id)}
 								onToggleFavorite={onToggleFavorite}
+								size={300}
 								url={currentCat.url}
 							/>
 						)}
 					</div>
-					<div className="mt-[30px] text-center">
-						<h2 className="mb-[10px] text-lg font-semibold tracking-wide text-zinc-500 uppercase">
+					<>
+						<h2 className="mb-[10px] text-center text-lg font-semibold tracking-wide text-zinc-500 uppercase">
 							Favorites
 						</h2>
 						{favoriteIds.length ? (
@@ -93,7 +94,7 @@ export default function CatContent() {
 								Favorite a cat image to add it to the list
 							</p>
 						)}
-					</div>
+					</>
 				</>
 			)}
 		</>
