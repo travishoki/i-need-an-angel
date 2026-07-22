@@ -1,4 +1,4 @@
-import { formatDate } from './helpers';
+import { formatDate } from './Details.helpers';
 import { CatDetails } from '../../cats/types';
 
 export default function Details({ cat }: DetailsProps) {
