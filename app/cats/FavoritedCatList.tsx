@@ -4,10 +4,10 @@ import CatCard from './CatCard';
 import { ROOT_URL } from './const';
 import { Cat } from './types';
 
-export default function CatList({
+export default function FavoritedCatList({
 	favoriteIds,
 	onToggleFavorite,
-}: CatListProps) {
+}: FavoritedCatListProps) {
 	const catsList = favoriteIds.map(
 		(id) =>
 			({
@@ -31,7 +31,7 @@ export default function CatList({
 	);
 }
 
-type CatListProps = {
+type FavoritedCatListProps = {
 	favoriteIds: string[];
 	onToggleFavorite: (id: string) => void;
 };

@@ -3,11 +3,10 @@
 import { SubmitEvent, useCallback, useEffect, useState } from 'react';
 import { buildCatUrl } from './CatContent.helpers';
 import CatForm from './CatForm';
-import CatList from './CatList';
+import FavoritedCatList from './FavoritedCatList';
 import { getFavorites, toggleCatFavorite } from './FavoriteButton.helpers';
 import { Cat } from './types';
 import CatCard from './CatCard';
-import { ROOT_URL } from './const';
 
 export default function CatContent() {
 	const [currentCat, setCurrentCat] = useState<Cat>();
@@ -16,10 +15,6 @@ export default function CatContent() {
 	const [loading, setLoading] = useState(true);
 
 	const [favoriteIds, setFavoriteIds] = useState(getFavorites);
-
-	const onToggleFavorite = (id: string) => {
-		setFavoriteIds(toggleCatFavorite(id));
-	};
 
 	const fetchCats = useCallback(
 		({ tag, text }: { tag?: string; text?: string }) => {
@@ -45,6 +40,10 @@ export default function CatContent() {
 	useEffect(() => {
 		fetchCats({});
 	}, [fetchCats]);
+
+	const onToggleFavorite = (id: string) => {
+		setFavoriteIds(toggleCatFavorite(id));
+	};
 
 	const onClickSubmit = (e: SubmitEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -84,7 +83,7 @@ export default function CatContent() {
 							<h2 className="mt-[30px] mb-[20px] text-xs font-semibold tracking-wide text-zinc-500 uppercase">
 								Favorites
 							</h2>
-							<CatList
+							<FavoritedCatList
 								favoriteIds={favoriteIds}
 								onToggleFavorite={onToggleFavorite}
 							/>
