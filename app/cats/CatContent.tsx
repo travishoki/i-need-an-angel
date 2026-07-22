@@ -72,7 +72,7 @@ export default function CatContent() {
 					{currentCat && (
 						<CatCard
 							catId={currentCat.id}
-							isFavorite={false} // TODO: add in value
+							isFavorite={favoriteIds.includes(currentCat.id)}
 							onToggleFavorite={onToggleFavorite}
 							url={currentCat.url}
 						/>
